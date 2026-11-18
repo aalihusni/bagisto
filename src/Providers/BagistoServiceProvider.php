@@ -106,6 +106,8 @@ class BagistoServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(dirname(__DIR__, 2).'/config/concord.php', 'concord');
         $this->mergeConfigFrom(dirname(__DIR__, 2).'/config/themes.php', 'themes');
 
+        $this->app->register(\Konekt\Concord\ConcordServiceProvider::class);
+
         foreach ($this->providers as $provider) {
             $this->app->register($provider);
         }
