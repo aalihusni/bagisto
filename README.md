@@ -79,6 +79,32 @@ Follow the [Getting Started with Bagisto](https://www.youtube.com/watch?v=s_DhQr
 
 You can browse through the Free [Live Demo](https://demo.bagisto.com/)
 
+## 📦 Install as a Laravel Package
+
+Bagisto can be installed directly into any existing Laravel 13 application as a Composer package.
+
+### 1. Require Package
+```bash
+composer require bagisto/bagisto
+```
+
+### 2. Publish Configuration & Assets
+Publish Bagisto's Concord and Theme configurations along with compiled frontend assets:
+```bash
+php artisan vendor:publish --tag=bagisto-config
+php artisan vendor:publish --tag=bagisto-assets
+```
+
+### 3. Run Migrations & Setup
+Run the database migrations and create symbolic storage links:
+```bash
+php artisan migrate
+php artisan storage:link
+php artisan bagisto:install
+```
+
+---
+
 ## 🐳 Run with Docker
 
 A single command gives you a fully installed store — migrations, seed data and search indexes are all baked into the image, so there is no first-run setup.

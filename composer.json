@@ -1,6 +1,6 @@
 {
     "name": "bagisto/bagisto",
-    "type": "project",
+    "type": "library",
     "description": "Bagisto Laravel E-Commerce",
     "keywords": [
         "framework",
@@ -72,6 +72,7 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
+            "Webkul\\Bagisto\\": "src/",
             "Webkul\\Admin\\": "packages/Webkul/Admin/src",
             "Webkul\\Attribute\\": "packages/Webkul/Attribute/src",
             "Webkul\\BookingProduct\\": "packages/Webkul/BookingProduct/src",
@@ -158,6 +159,9 @@
     },
     "extra": {
         "laravel": {
+            "providers": [
+                "Webkul\\Bagisto\\Providers\\BagistoServiceProvider"
+            ],
             "dont-discover": [
                 "laravel/socialite"
             ]
