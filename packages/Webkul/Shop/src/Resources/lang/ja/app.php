@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'デフォルトに設定',
                     'state' => '都道府県',
                     'street-address' => '住所',
+                    'street-address-line' => '住所（:line行目）',
                     'title' => '住所',
                     'vat-id' => 'VAT番号',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => '国を選択',
                     'state' => '都道府県',
                     'street-address' => '住所',
+                    'street-address-line' => '住所（:line行目）',
                     'title' => '住所',
                     'update-btn' => '更新する',
                     'vat-id' => 'VAT番号',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'リクエストが正常に作成されました。',
                 'revoked-successfully' => 'リクエストが正常に取り消されました。',
+                'success-verify' => '成功！確認メールが送信されました。',
+                'success-verify-email-unsent' => '成功！確認メールは送信されませんでした。',
+                'unable-to-sent' => 'メールを送信できません。',
 
                 'index' => [
                     'create-btn' => 'リクエストを作成',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => '配送先住所',
                 'state' => '都道府県',
                 'street-address' => '住所',
+                'street-address-line' => '住所（:line行目）',
                 'title' => '住所',
                 'vat-id' => 'VAT番号',
             ],

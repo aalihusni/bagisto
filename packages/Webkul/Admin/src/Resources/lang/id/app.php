@@ -48,14 +48,18 @@ return [
     'notifications' => [
         'all' => 'Semua',
         'description' => 'Pantau pesanan, pelanggan, dan semua hal yang memerlukan perhatian Anda.',
+        'description-text' => 'Daftar semua Notifikasi',
         'empty-description' => 'Notifikasi baru akan muncul di sini begitu masuk.',
         'empty-title' => 'Semua sudah Anda lihat',
         'mark-all-read' => 'Tandai semua sudah dibaca',
         'mark-read' => 'Tandai sudah dibaca',
         'mark-unread' => 'Tandai belum dibaca',
         'marked-all-read' => 'Semua notifikasi telah ditandai sudah dibaca.',
+        'marked-success' => 'Semua notifikasi telah ditandai sebagai dibaca',
+        'no-record' => 'Tidak Ada Data Ditemukan',
         'of' => 'dari',
         'per-page' => 'Per Halaman',
+        'read-all' => 'Tandai sebagai Dibaca',
         'title' => 'Notifikasi',
         'today' => 'Hari Ini',
         'unread' => 'Belum dibaca',
@@ -69,12 +73,48 @@ return [
             'orders' => 'Pesanan',
             'returns' => 'Permintaan RMA',
             'reviews' => 'Ulasan',
+            'system' => 'Sistem',
+        ],
+
+        'order-status-messages' => [
+            'all' => 'Semua',
+            'canceled' => 'Pesanan Dibatalkan',
+            'closed' => 'Pesanan Ditutup',
+            'completed' => 'Pesanan Selesai',
+            'pending' => 'Pesanan Tertunda',
+            'pending-payment' => 'Menunggu Pembayaran',
+            'processing' => 'Pesanan Sedang Diproses',
         ],
 
         'types' => [
+            'app-url-mismatch' => [
+                'message' => 'APP_URL adalah :url, tetapi toko dilayani dari :host. Tautan di email akan salah.',
+                'title' => 'APP_URL tidak cocok dengan alamat toko',
+            ],
+
+            'broadcast-unreachable' => [
+                'message' => 'Server broadcasting tidak merespons, sehingga notifikasi tidak diperbarui secara langsung.',
+                'title' => 'Notifikasi real-time tidak dapat dijangkau',
+            ],
+
             'customer-registered' => [
                 'message' => ':name · :email',
                 'title' => 'Pelanggan baru terdaftar',
+            ],
+
+            'debug-mode-enabled' => [
+                'message' => 'Halaman error menampilkan detail internal kepada pengunjung. Atur APP_DEBUG=false.',
+                'title' => 'Mode debug aktif di produksi',
+            ],
+
+            'exchange-rates-stale' => [
+                'message' => 'Nilai tukar tidak diperbarui sesuai jadwal. Periksa layanan nilai tukar dan kunci API-nya.',
+                'title' => 'Nilai tukar sudah usang',
+            ],
+
+            'failed-jobs' => [
+                'message' => ':count job gagal sedang menunggu. Tinjau dengan php artisan queue:failed.',
+                'title' => 'Job dalam antrean gagal',
             ],
 
             'gdpr-requested' => [
@@ -87,6 +127,16 @@ return [
                 'message' => ':processed baris diproses',
                 'message-skipped' => ':processed baris diproses, :skipped dilewati',
                 'title' => 'Impor :type selesai',
+            ],
+
+            'index-incomplete' => [
+                'message' => 'Beberapa produk tidak memiliki indeks harga. Jalankan php artisan indexer:index.',
+                'title' => 'Indeks produk tidak lengkap',
+            ],
+
+            'mail-not-configured' => [
+                'message' => 'Toko tidak dapat mengirim email sampai SMTP atau Brevo disiapkan.',
+                'title' => 'Email belum dikonfigurasi',
             ],
 
             'order' => [
@@ -106,6 +156,11 @@ return [
                 'title' => 'Pengembalian dana diterbitkan untuk pesanan #:order',
             ],
 
+            'queue-worker-stopped' => [
+                'message' => 'Job pada antrean :connection sedang menunggu. Jalankan dengan php artisan queue:work.',
+                'title' => 'Queue worker tidak berjalan',
+            ],
+
             'return-requested' => [
                 'message' => 'Pesanan #:order dari :customer',
                 'title' => 'Permintaan retur baru #:id',
@@ -114,6 +169,25 @@ return [
             'review-created' => [
                 'message' => ':customer memberi :product nilai :rating dari 5',
                 'title' => 'Ulasan baru menunggu persetujuan',
+            ],
+
+            'scheduler-stopped' => [
+                'message' => 'Tugas terjadwal tidak berjalan. Tambahkan entri cron schedule:run ke server Anda.',
+                'title' => 'Scheduler tidak berjalan',
+            ],
+
+            'search-unreachable' => [
+                'message' => 'Mesin pencari tidak merespons. Periksa pengaturan koneksinya.',
+                'title' => 'Mesin pencari tidak dapat dijangkau',
+            ],
+
+            'storage-unreachable' => [
+                'message' => 'Unggahan tidak dapat mencapai penyimpanan yang dipilih. Periksa kredensialnya.',
+                'title' => 'Penyimpanan jarak jauh tidak tersedia',
+            ],
+
+            'system' => [
+                'resolved-title' => 'Teratasi: :title',
             ],
         ],
     ],
@@ -390,10 +464,12 @@ return [
                         'search' => [
                             'add-to-cart' => 'Tambah ke Keranjang',
                             'available-qty' => ':qty Tersedia',
+                            'empty-channel-info' => 'Tidak ada produk pada saluran :channel yang sesuai dengan pencarian.',
                             'empty-info' => 'Tidak ada produk yang sesuai dengan pencarian.',
                             'empty-title' => 'Produk Tidak Ditemukan',
                             'product-image' => 'Gambar Produk',
                             'qty' => 'Jumlah',
+                            'search-info' => 'Cari produk yang tersedia pada saluran :channel.',
                             'sku' => 'SKU - :sku',
                             'title' => 'Cari Produk',
                         ],
@@ -428,6 +504,7 @@ return [
                         'shipping-address' => 'Alamat Pengiriman',
                         'state' => 'Provinsi',
                         'street-address' => 'Alamat Jalan',
+                        'street-address-line' => 'Alamat Jalan, Baris :line',
                         'title' => 'Alamat',
                         'vat-id' => 'ID Pajak',
                     ],
@@ -2114,12 +2191,17 @@ return [
                 'code' => 'Kode',
                 'column' => 'Kolom',
                 'delete-group-btn' => 'Hapus Grup',
+                'drop-attributes-here' => 'Seret atribut ke sini',
+                'edit-group-btn' => 'Edit Grup',
                 'edit-group-info' => 'Klik dua kali untuk mengedit Grup',
+                'edit-group-title' => 'Edit Grup',
                 'enter-code' => 'Masukkan Kode',
                 'enter-name' => 'Masukkan Nama',
                 'general' => 'Umum',
                 'group-code-already-exists' => 'Kode grup atribut sudah ada.',
                 'group-contains-system-attributes' => 'Grup ini berisi atribut sistem. Pindahkan atribut sistem ke grup lain terlebih dahulu, lalu coba lagi.',
+                'group-labels' => 'Nama di Setiap Lokal',
+                'group-labels-info' => 'Kosongkan lokal untuk menggunakan nama di atas.',
                 'group-name-already-exists' => 'Nama grup atribut sudah ada.',
                 'groups' => 'Grup',
                 'groups-info' => 'Kelola grup keluarga atribut',
@@ -2128,6 +2210,7 @@ return [
                 'removal-not-possible' => 'Anda tidak dapat menghapus atribut sistem dari keluarga atribut.',
                 'right-column' => 'Kolom Samping Kanan',
                 'save-btn' => 'Simpan Keluarga Atribut',
+                'save-group-btn' => 'Simpan Grup',
                 'select-group' => 'Silakan pilih grup atribut.',
                 'title' => 'Buat Keluarga Atribut',
                 'unassigned-attributes' => 'Atribut yang Belum Ditugaskan',
@@ -2141,12 +2224,17 @@ return [
                 'code' => 'Kode',
                 'column' => 'Kolom',
                 'delete-group-btn' => 'Hapus Grup',
+                'drop-attributes-here' => 'Seret atribut ke sini',
+                'edit-group-btn' => 'Edit Grup',
                 'edit-group-info' => 'Klik dua kali untuk mengedit Grup',
+                'edit-group-title' => 'Edit Grup',
                 'enter-code' => 'Masukkan Kode',
                 'enter-name' => 'Masukkan Nama',
                 'general' => 'Umum',
                 'group-code-already-exists' => 'Kode grup atribut sudah ada.',
                 'group-contains-system-attributes' => 'Grup ini berisi atribut sistem. Pindahkan atribut sistem ke grup lain terlebih dahulu, lalu coba lagi.',
+                'group-labels' => 'Nama di Setiap Lokal',
+                'group-labels-info' => 'Kosongkan lokal untuk menggunakan nama di atas.',
                 'group-name-already-exists' => 'Nama grup atribut sudah ada.',
                 'groups' => 'Grup',
                 'groups-info' => 'Kelola grup keluarga atribut',
@@ -2155,6 +2243,7 @@ return [
                 'removal-not-possible' => 'Anda tidak dapat menghapus atribut sistem dari keluarga atribut.',
                 'right-column' => 'Kolom Samping Kanan',
                 'save-btn' => 'Simpan Keluarga Atribut',
+                'save-group-btn' => 'Simpan Grup',
                 'select-group' => 'Silakan pilih grup atribut.',
                 'title' => 'Edit Keluarga Atribut',
                 'unassigned-attributes' => 'Atribut yang Belum Ditugaskan',
@@ -2274,6 +2363,7 @@ return [
                         'select-country' => 'Pilih Negara',
                         'state' => 'Provinsi',
                         'street-address' => 'Alamat Jalan',
+                        'street-address-line' => 'Alamat Jalan, Baris :line',
                         'title' => 'Tambah Alamat',
                         'vat-id' => 'ID Pajak',
                     ],
@@ -2293,6 +2383,7 @@ return [
                         'select-country' => 'Pilih Negara',
                         'state' => 'Provinsi',
                         'street-address' => 'Alamat Jalan',
+                        'street-address-line' => 'Alamat Jalan, Baris :line',
                         'title' => 'Edit Alamat',
                         'vat-id' => 'ID Pajak',
                     ],
@@ -4544,6 +4635,78 @@ return [
                         'yes' => 'Ya',
                     ],
                 ],
+
+                'system-health' => [
+                    'info' => 'Apa yang dibutuhkan toko untuk berjalan, dan apa yang perlu Anda perhatikan.',
+                    'open-settings' => 'Buka pengaturan',
+                    'summary-attention' => ':count dari :total pemeriksaan perlu perhatian.',
+                    'summary-healthy' => 'Semua yang dibutuhkan toko berfungsi.',
+                    'title' => 'Kesehatan Sistem',
+
+                    'checks' => [
+                        'application-url' => [
+                            'info' => 'APP_URL harus cocok dengan alamat tempat toko dilayani.',
+                            'title' => 'Alamat toko',
+                        ],
+
+                        'broadcasting' => [
+                            'info' => 'Mengirim notifikasi baru ke panel admin tanpa memuat ulang.',
+                            'title' => 'Notifikasi real-time',
+                        ],
+
+                        'debug-mode' => [
+                            'info' => 'Harus mati di produksi agar halaman error tidak mengungkap apa pun.',
+                            'title' => 'Mode debug',
+                        ],
+
+                        'exchange-rates' => [
+                            'info' => 'Menjaga nilai tukar tetap terkini di toko dengan beberapa mata uang.',
+                            'title' => 'Nilai tukar',
+                        ],
+
+                        'failed-jobs' => [
+                            'info' => 'Job latar belakang yang berhenti karena error dan menunggu dicoba ulang.',
+                            'title' => 'Job gagal',
+                        ],
+
+                        'mail' => [
+                            'info' => 'Mengirim email pesanan, akun, dan admin.',
+                            'title' => 'Email',
+                        ],
+
+                        'product-index' => [
+                            'info' => 'Menyimpan harga yang digunakan toko untuk menampilkan produk.',
+                            'title' => 'Indeks produk',
+                        ],
+
+                        'queue-worker' => [
+                            'info' => 'Memproses email, impor, dan pengindeksan di latar belakang.',
+                            'title' => 'Queue worker',
+                        ],
+
+                        'remote-storage' => [
+                            'info' => 'Menyimpan gambar produk dan unggahan lainnya.',
+                            'title' => 'Penyimpanan file',
+                        ],
+
+                        'scheduler' => [
+                            'info' => 'Menjalankan tugas terjadwal seperti aturan harga, nilai tukar, dan pengingat faktur.',
+                            'title' => 'Scheduler',
+                        ],
+
+                        'search-engine' => [
+                            'info' => 'Melayani pencarian toko dan daftar kategori.',
+                            'title' => 'Mesin pencari',
+                        ],
+                    ],
+
+                    'states' => [
+                        'failing' => 'Perlu perhatian',
+                        'healthy' => 'Berfungsi',
+                        'idle' => 'Tidak digunakan',
+                        'unconfirmed' => 'Belum terkonfirmasi',
+                    ],
+                ],
             ],
 
             'add-file' => 'Tambah Berkas',
@@ -4559,6 +4722,7 @@ return [
             'save-message' => 'Konfigurasi berhasil disimpan',
             'search' => 'Cari',
             'select-country' => 'Pilih Negara',
+            'select-options' => 'Pilih Opsi',
             'select-state' => 'Pilih Provinsi',
             'title' => 'Konfigurasi',
 
@@ -5393,6 +5557,13 @@ return [
                         'title' => 'Informasi',
                         'title-info' => 'Berapa banyak baris alamat yang ditampilkan formulir alamat.',
                     ],
+
+                    'countries' => [
+                        'allowed' => 'Negara yang Diizinkan',
+                        'allowed-info' => 'Biarkan kosong untuk menawarkan semua negara.',
+                        'title' => 'Negara',
+                        'title-info' => 'Negara yang dapat dipilih pelanggan di etalase toko.',
+                    ],
                 ],
 
                 'captcha' => [
@@ -5889,6 +6060,7 @@ return [
                 'logout' => 'Keluar',
                 'my-account' => 'Akun Saya',
                 'notifications' => 'Notifikasi',
+                'system-health' => 'Kesehatan Sistem',
                 'visit-shop' => 'Kunjungi Toko',
 
                 'mega-search' => [

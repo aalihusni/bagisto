@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Ustaw jako domyślny',
                     'state' => 'Województwo',
                     'street-address' => 'Adres',
+                    'street-address-line' => 'Adres, linia :line',
                     'title' => 'Adres',
                     'vat-id' => 'Numer VAT',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Wybierz kraj',
                     'state' => 'Województwo',
                     'street-address' => 'Adres',
+                    'street-address-line' => 'Adres, linia :line',
                     'title' => 'Adres',
                     'update-btn' => 'Aktualizuj',
                     'vat-id' => 'Numer VAT',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Żądanie zostało pomyślnie utworzone',
                 'revoked-successfully' => 'Żądanie zostało pomyślnie cofnięte',
+                'success-verify' => 'Sukces! E-mail weryfikacyjny został wysłany.',
+                'success-verify-email-unsent' => 'Sukces! E-mail weryfikacyjny nie został wysłany.',
+                'unable-to-sent' => 'Nie można wysłać e-maila.',
 
                 'index' => [
                     'create-btn' => 'Utwórz żądanie',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Adres dostawy',
                 'state' => 'Województwo',
                 'street-address' => 'Adres ulicy',
+                'street-address-line' => 'Adres ulicy, linia :line',
                 'title' => 'Adres',
                 'vat-id' => 'Numer VAT',
             ],

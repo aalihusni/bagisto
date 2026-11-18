@@ -147,6 +147,7 @@ return [
                     'set-as-default' => '设为默认',
                     'state' => '州/省',
                     'street-address' => '街道地址',
+                    'street-address-line' => '街道地址（第:line行）',
                     'title' => '地址',
                     'vat-id' => 'VAT号码',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => '选择国家',
                     'state' => '州/省',
                     'street-address' => '街道地址',
+                    'street-address-line' => '街道地址（第:line行）',
                     'title' => '地址',
                     'update-btn' => '更新',
                     'vat-id' => 'VAT号码',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => '请求创建成功',
                 'revoked-successfully' => '请求撤销成功',
+                'success-verify' => '成功！验证邮件已发送。',
+                'success-verify-email-unsent' => '成功！验证邮件未发送。',
+                'unable-to-sent' => '无法发送邮件。',
 
                 'index' => [
                     'create-btn' => '创建请求',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => '送货地址',
                 'state' => '省份',
                 'street-address' => '街道地址',
+                'street-address-line' => '街道地址（第:line行）',
                 'title' => '地址',
                 'vat-id' => 'VAT号码',
             ],

@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Встановити за замовчуванням',
                     'state' => 'Область',
                     'street-address' => 'Вулиця та номер будинку',
+                    'street-address-line' => 'Вулиця та номер будинку, рядок :line',
                     'title' => 'Адреса',
                     'vat-id' => 'Ідентифікаційний номер ПДВ',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Виберіть країну',
                     'state' => 'Область',
                     'street-address' => 'Вулиця та номер будинку',
+                    'street-address-line' => 'Вулиця та номер будинку, рядок :line',
                     'title' => 'Адреса',
                     'update-btn' => 'Оновити',
                     'vat-id' => 'Ідентифікаційний номер ПДВ',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Запит успішно створено',
                 'revoked-successfully' => 'Запит успішно скасовано',
+                'success-verify' => 'Успішно! Лист для підтвердження відправлено.',
+                'success-verify-email-unsent' => 'Успішно! Лист для підтвердження не відправлено.',
+                'unable-to-sent' => 'Не вдалося надіслати листа.',
 
                 'index' => [
                     'create-btn' => 'Створити запит',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Адреса доставки',
                 'state' => 'Область',
                 'street-address' => 'Вулиця',
+                'street-address-line' => 'Вулиця, рядок :line',
                 'title' => 'Адреса',
                 'vat-id' => 'Ідентифікаційний номер ПДВ',
             ],

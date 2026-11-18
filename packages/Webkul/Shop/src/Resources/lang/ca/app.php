@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Establir com a Predeterminada',
                     'state' => 'Estat',
                     'street-address' => 'Adreça',
+                    'street-address-line' => 'Adreça, línia :line',
                     'title' => 'Adreça',
                     'vat-id' => 'ID de l\'IVA',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Seleccionar País',
                     'state' => 'Estat',
                     'street-address' => 'Adreça',
+                    'street-address-line' => 'Adreça, línia :line',
                     'title' => 'Adreça',
                     'update-btn' => 'Actualitzar',
                     'vat-id' => 'ID de l\'IVA',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Sol·licitud creada correctament',
                 'revoked-successfully' => 'Sol·licitud revocada correctament',
+                'success-verify' => 'Èxit! S\'ha enviat el correu electrònic de verificació.',
+                'success-verify-email-unsent' => 'Èxit! El correu electrònic de verificació no s\'ha enviat.',
+                'unable-to-sent' => 'No s\'ha pogut enviar el correu electrònic.',
 
                 'index' => [
                     'create-btn' => 'Crea sol·licitud',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Adreça d\'enviament',
                 'state' => 'Estat',
                 'street-address' => 'Adreça',
+                'street-address-line' => 'Adreça, línia :line',
                 'title' => 'Adreça',
                 'vat-id' => 'Número d\'Identificació Fiscal',
             ],

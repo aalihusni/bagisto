@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Weka Kama Chaguomsingi',
                     'state' => 'Mkoa',
                     'street-address' => 'Anwani ya Mtaa',
+                    'street-address-line' => 'Anwani ya Mtaa, Mstari :line',
                     'title' => 'Anwani',
                     'vat-id' => 'Kitambulisho cha VAT',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Chagua Nchi',
                     'state' => 'Mkoa',
                     'street-address' => 'Anwani ya Mtaa',
+                    'street-address-line' => 'Anwani ya Mtaa, Mstari :line',
                     'title' => 'Anwani',
                     'update-btn' => 'Sasisha',
                     'vat-id' => 'Kitambulisho cha VAT',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Ombi limetengenezwa kwa mafanikio',
                 'revoked-successfully' => 'Ombi limebatilishwa kwa mafanikio',
+                'success-verify' => 'Mafanikio! Barua pepe ya uthibitisho imetumwa.',
+                'success-verify-email-unsent' => 'Mafanikio! Barua pepe ya uthibitisho haijatumwa.',
+                'unable-to-sent' => 'Imeshindikana kutuma barua pepe.',
 
                 'index' => [
                     'create-btn' => 'Tengeneza Ombi',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Anwani ya Usafirishaji',
                 'state' => 'Mkoa',
                 'street-address' => 'Anwani ya Mtaa',
+                'street-address-line' => 'Anwani ya Mtaa, Mstari :line',
                 'title' => 'Anwani',
                 'vat-id' => 'Kitambulisho cha VAT',
             ],

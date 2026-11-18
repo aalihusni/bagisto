@@ -48,14 +48,18 @@ return [
     'notifications' => [
         'all' => 'Tots',
         'description' => 'Estigueu al dia de les comandes, els clients i tot allò que requereix la vostra atenció.',
+        'description-text' => 'Llistar totes les notificacions',
         'empty-description' => 'Les notificacions noves apareixeran aquí quan arribin.',
         'empty-title' => 'Ho teniu tot al dia',
         'mark-all-read' => 'Marca-ho tot com a llegit',
         'mark-read' => 'Marca com a llegida',
         'mark-unread' => 'Marca com a no llegida',
         'marked-all-read' => 'Totes les notificacions s\'han marcat com a llegides.',
+        'marked-success' => 'Totes les notificacions s’han marcat com a llegides',
+        'no-record' => 'No s’han trobat registres',
         'of' => 'de',
         'per-page' => 'Per pàgina',
+        'read-all' => 'Marcar com a llegit',
         'title' => 'Notificacions',
         'today' => 'Avui',
         'unread' => 'No llegides',
@@ -69,12 +73,48 @@ return [
             'orders' => 'Ordres',
             'returns' => 'Sol·licituds RMA',
             'reviews' => 'Ressenyes',
+            'system' => 'Sistema',
+        ],
+
+        'order-status-messages' => [
+            'all' => 'Tots',
+            'canceled' => 'Comanda cancel·lada',
+            'closed' => 'Comanda tancada',
+            'completed' => 'Comanda completada',
+            'pending' => 'Comanda pendent',
+            'pending-payment' => 'Pagament pendent',
+            'processing' => 'Comanda en procés',
         ],
 
         'types' => [
+            'app-url-mismatch' => [
+                'message' => 'APP_URL és :url, però la botiga se serveix des de :host. Els enllaços dels correus seran incorrectes.',
+                'title' => 'APP_URL no coincideix amb l\'adreça de la botiga',
+            ],
+
+            'broadcast-unreachable' => [
+                'message' => 'El servidor de difusió no ha respost, de manera que les notificacions no s\'actualitzaran en directe.',
+                'title' => 'Les notificacions en temps real no estan disponibles',
+            ],
+
             'customer-registered' => [
                 'message' => ':name · :email',
                 'title' => 'Nou client registrat',
+            ],
+
+            'debug-mode-enabled' => [
+                'message' => 'Les pàgines d\'error mostren detalls interns als visitants. Establiu APP_DEBUG=false.',
+                'title' => 'El mode de depuració està activat a producció',
+            ],
+
+            'exchange-rates-stale' => [
+                'message' => 'Els tipus no s\'han actualitzat segons la planificació. Comproveu el servei de tipus de canvi i la seva clau API.',
+                'title' => 'Els tipus de canvi no estan actualitzats',
+            ],
+
+            'failed-jobs' => [
+                'message' => 'Hi ha :count tasques fallides en espera. Reviseu-les amb php artisan queue:failed.',
+                'title' => 'Les tasques de la cua estan fallant',
             ],
 
             'gdpr-requested' => [
@@ -87,6 +127,16 @@ return [
                 'message' => ':processed files processades',
                 'message-skipped' => ':processed files processades, :skipped omeses',
                 'title' => 'Importació de :type completada',
+            ],
+
+            'index-incomplete' => [
+                'message' => 'Alguns productes no tenen índex de preus. Executeu php artisan indexer:index.',
+                'title' => 'L\'índex de productes és incomplet',
+            ],
+
+            'mail-not-configured' => [
+                'message' => 'La botiga no pot enviar correus fins que es configuri SMTP o Brevo.',
+                'title' => 'El correu electrònic no està configurat',
             ],
 
             'order' => [
@@ -106,6 +156,11 @@ return [
                 'title' => 'Reemborsament emès per a la comanda #:order',
             ],
 
+            'queue-worker-stopped' => [
+                'message' => 'Les tasques de la cua :connection estan en espera. Inicieu-lo amb php artisan queue:work.',
+                'title' => 'El treballador de la cua no s\'està executant',
+            ],
+
             'return-requested' => [
                 'message' => 'Comanda #:order de :customer',
                 'title' => 'Nova sol·licitud de devolució #:id',
@@ -114,6 +169,25 @@ return [
             'review-created' => [
                 'message' => ':customer ha valorat :product amb :rating de 5',
                 'title' => 'Nova ressenya pendent d\'aprovació',
+            ],
+
+            'scheduler-stopped' => [
+                'message' => 'Les tasques programades no s\'executen. Afegiu l\'entrada cron de schedule:run al servidor.',
+                'title' => 'El planificador no s\'està executant',
+            ],
+
+            'search-unreachable' => [
+                'message' => 'El motor de cerca no ha respost. Comproveu la configuració de connexió.',
+                'title' => 'El motor de cerca no és accessible',
+            ],
+
+            'storage-unreachable' => [
+                'message' => 'Les pujades no poden arribar a l\'emmagatzematge seleccionat. Comproveu-ne les credencials.',
+                'title' => 'L\'emmagatzematge remot no està disponible',
+            ],
+
+            'system' => [
+                'resolved-title' => 'Resolt: :title',
             ],
         ],
     ],
@@ -390,10 +464,12 @@ return [
                         'search' => [
                             'add-to-cart' => 'Afegir a la cistella',
                             'available-qty' => ':qty disponible',
+                            'empty-channel-info' => 'No hi ha productes disponibles al canal :channel per al terme de cerca.',
                             'empty-info' => 'No hi ha productes disponibles per al terme de cerca.',
                             'empty-title' => 'No s\'han trobat productes',
                             'product-image' => 'Imatge del producte',
                             'qty' => 'Quantitat',
+                            'search-info' => 'Cerqueu els productes disponibles al canal :channel.',
                             'sku' => 'SKU - :sku',
                             'title' => 'Cercar productes',
                         ],
@@ -428,6 +504,7 @@ return [
                         'shipping-address' => 'Adreça d\'enviament',
                         'state' => 'Estat',
                         'street-address' => 'Adreça',
+                        'street-address-line' => 'Adreça, línia :line',
                         'title' => 'Adreça',
                         'vat-id' => 'NIF',
                     ],
@@ -2114,12 +2191,17 @@ return [
                 'code' => 'Codi',
                 'column' => 'Columna',
                 'delete-group-btn' => 'Eliminar Grup',
+                'drop-attributes-here' => 'Arrossega els atributs aquí',
+                'edit-group-btn' => 'Edita el grup',
                 'edit-group-info' => 'Feu doble clic per editar el Grup',
+                'edit-group-title' => 'Edita el grup',
                 'enter-code' => 'Introduïu el Codi',
                 'enter-name' => 'Introduïu el Nom',
                 'general' => 'General',
                 'group-code-already-exists' => 'Ja existeix un codi de grup d\'atributs.',
                 'group-contains-system-attributes' => 'Aquest grup conté atributs del sistema. Primer moveu els atributs del sistema a un altre grup i després torneu-ho a provar.',
+                'group-labels' => 'Nom en cada idioma',
+                'group-labels-info' => 'Deixeu un idioma buit per utilitzar el nom de dalt.',
                 'group-name-already-exists' => 'Ja existeix un nom de grup d\'atributs.',
                 'groups' => 'Grups',
                 'groups-info' => 'Gestiona els grups de famílies d\'atributs',
@@ -2128,6 +2210,7 @@ return [
                 'removal-not-possible' => 'No pots eliminar atributs del sistema de la família d\'atributs.',
                 'right-column' => 'Columna de la Dreta',
                 'save-btn' => 'Desar Família d\'Atributs',
+                'save-group-btn' => 'Desa el grup',
                 'select-group' => 'Si us plau, selecciona un grup d\'atributs.',
                 'title' => 'Crear Família d\'Atributs',
                 'unassigned-attributes' => 'Atributs no assignats',
@@ -2141,12 +2224,17 @@ return [
                 'code' => 'Codi',
                 'column' => 'Columna',
                 'delete-group-btn' => 'Eliminar Grup',
+                'drop-attributes-here' => 'Arrossega els atributs aquí',
+                'edit-group-btn' => 'Edita el grup',
                 'edit-group-info' => 'Feu doble clic per editar el Grup',
+                'edit-group-title' => 'Edita el grup',
                 'enter-code' => 'Introduïu el Codi',
                 'enter-name' => 'Introduïu el Nom',
                 'general' => 'General',
                 'group-code-already-exists' => 'Ja existeix un codi de grup d\'atributs.',
                 'group-contains-system-attributes' => 'Aquest grup conté atributs del sistema. Primer moveu els atributs del sistema a un altre grup i després torneu-ho a provar.',
+                'group-labels' => 'Nom en cada idioma',
+                'group-labels-info' => 'Deixeu un idioma buit per utilitzar el nom de dalt.',
                 'group-name-already-exists' => 'Ja existeix un nom de grup d\'atributs.',
                 'groups' => 'Grups',
                 'groups-info' => 'Gestiona els grups de famílies d\'atributs',
@@ -2155,6 +2243,7 @@ return [
                 'removal-not-possible' => 'No pots eliminar atributs del sistema de la família d\'atributs.',
                 'right-column' => 'Columna de la Dreta',
                 'save-btn' => 'Desar Família d\'Atributs',
+                'save-group-btn' => 'Desa el grup',
                 'select-group' => 'Si us plau, selecciona un grup d\'atributs.',
                 'title' => 'Editar Família d\'Atributs',
                 'unassigned-attributes' => 'Atributs no assignats',
@@ -2274,6 +2363,7 @@ return [
                         'select-country' => 'Seleccionar país',
                         'state' => 'Estat',
                         'street-address' => 'Adreça',
+                        'street-address-line' => 'Adreça, línia :line',
                         'title' => 'Crear adreça',
                         'vat-id' => 'ID d\'IVA',
                     ],
@@ -2293,6 +2383,7 @@ return [
                         'select-country' => 'Seleccionar país',
                         'state' => 'Estat',
                         'street-address' => 'Adreça',
+                        'street-address-line' => 'Adreça, línia :line',
                         'title' => 'Editar adreça',
                         'vat-id' => 'ID d\'IVA',
                     ],
@@ -4544,6 +4635,78 @@ return [
                         'yes' => 'Sí',
                     ],
                 ],
+
+                'system-health' => [
+                    'info' => 'El que la botiga necessita per funcionar i el que requereix la vostra atenció.',
+                    'open-settings' => 'Obre la configuració',
+                    'summary-attention' => ':count de :total comprovacions requereixen atenció.',
+                    'summary-healthy' => 'Tot el que la botiga necessita funciona.',
+                    'title' => 'Estat del sistema',
+
+                    'checks' => [
+                        'application-url' => [
+                            'info' => 'APP_URL ha de coincidir amb l\'adreça des d\'on se serveix la botiga.',
+                            'title' => 'Adreça de la botiga',
+                        ],
+
+                        'broadcasting' => [
+                            'info' => 'Envia les notificacions noves al panell d\'administració sense recarregar.',
+                            'title' => 'Notificacions en temps real',
+                        ],
+
+                        'debug-mode' => [
+                            'info' => 'Ha d\'estar desactivat a producció perquè les pàgines d\'error no revelin res.',
+                            'title' => 'Mode de depuració',
+                        ],
+
+                        'exchange-rates' => [
+                            'info' => 'Manté actualitzats els tipus en una botiga amb diverses monedes.',
+                            'title' => 'Tipus de canvi',
+                        ],
+
+                        'failed-jobs' => [
+                            'info' => 'Tasques en segon pla que s\'han aturat amb un error i esperen un reintent.',
+                            'title' => 'Tasques fallides',
+                        ],
+
+                        'mail' => [
+                            'info' => 'Envia els correus de comandes, comptes i administració.',
+                            'title' => 'Correu electrònic',
+                        ],
+
+                        'product-index' => [
+                            'info' => 'Conté els preus amb què la botiga llista els productes.',
+                            'title' => 'Índex de productes',
+                        ],
+
+                        'queue-worker' => [
+                            'info' => 'Processa correus, importacions i indexació en segon pla.',
+                            'title' => 'Treballador de la cua',
+                        ],
+
+                        'remote-storage' => [
+                            'info' => 'Desa les imatges de producte i altres pujades.',
+                            'title' => 'Emmagatzematge de fitxers',
+                        ],
+
+                        'scheduler' => [
+                            'info' => 'Executa tasques programades com regles de preus, tipus de canvi i recordatoris de factures.',
+                            'title' => 'Planificador',
+                        ],
+
+                        'search-engine' => [
+                            'info' => 'Respon a la cerca de la botiga i als llistats de categories.',
+                            'title' => 'Motor de cerca',
+                        ],
+                    ],
+
+                    'states' => [
+                        'failing' => 'Requereix atenció',
+                        'healthy' => 'Funciona',
+                        'idle' => 'No s\'utilitza',
+                        'unconfirmed' => 'Encara no confirmat',
+                    ],
+                ],
             ],
 
             'add-file' => 'Afegir Fitxer',
@@ -4559,6 +4722,7 @@ return [
             'save-message' => 'Configuració desada correctament',
             'search' => 'Cerca',
             'select-country' => 'Selecciona el país',
+            'select-options' => 'Selecciona opcions',
             'select-state' => 'Selecciona l\'estat',
             'title' => 'Configuració',
 
@@ -5393,6 +5557,13 @@ return [
                         'title' => 'Informació',
                         'title-info' => 'Quantes línies d\'adreça mostra el formulari.',
                     ],
+
+                    'countries' => [
+                        'allowed' => 'Països permesos',
+                        'allowed-info' => 'Deixeu-ho buit per oferir tots els països.',
+                        'title' => 'Països',
+                        'title-info' => 'Quins països poden triar els clients a la botiga.',
+                    ],
                 ],
 
                 'captcha' => [
@@ -5889,6 +6060,7 @@ return [
                 'logout' => 'Tancar sessió',
                 'my-account' => 'El meu compte',
                 'notifications' => 'Notificacions',
+                'system-health' => 'Estat del sistema',
                 'visit-shop' => 'Visitar botiga',
 
                 'mega-search' => [

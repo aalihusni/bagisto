@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Jadikan Alamat Utama',
                     'state' => 'Provinsi',
                     'street-address' => 'Alamat Jalan',
+                    'street-address-line' => 'Alamat Jalan, Baris :line',
                     'title' => 'Alamat',
                     'vat-id' => 'ID Pajak (NPWP)',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Pilih Negara',
                     'state' => 'Provinsi',
                     'street-address' => 'Alamat Jalan',
+                    'street-address-line' => 'Alamat Jalan, Baris :line',
                     'title' => 'Alamat',
                     'update-btn' => 'Perbarui',
                     'vat-id' => 'ID Pajak (NPWP)',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Permintaan berhasil dibuat',
                 'revoked-successfully' => 'Permintaan berhasil dibatalkan',
+                'success-verify' => 'Berhasil! Email verifikasi telah dikirim.',
+                'success-verify-email-unsent' => 'Berhasil! Email verifikasi belum dikirim.',
+                'unable-to-sent' => 'Tidak dapat mengirim email.',
 
                 'index' => [
                     'create-btn' => 'Buat Permintaan',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Alamat Pengiriman',
                 'state' => 'Provinsi',
                 'street-address' => 'Alamat Jalan',
+                'street-address-line' => 'Alamat Jalan, Baris :line',
                 'title' => 'Alamat',
                 'vat-id' => 'Nomor NPWP',
             ],

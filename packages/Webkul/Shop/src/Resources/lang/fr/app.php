@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Définir comme adresse par défaut',
                     'state' => 'État',
                     'street-address' => 'Adresse',
+                    'street-address-line' => 'Adresse, ligne :line',
                     'title' => 'Adresse',
                     'vat-id' => 'Numéro de TVA',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Sélectionner le pays',
                     'state' => 'État',
                     'street-address' => 'Adresse',
+                    'street-address-line' => 'Adresse, ligne :line',
                     'title' => 'Adresse',
                     'update-btn' => 'Mettre à jour',
                     'vat-id' => 'Numéro de TVA',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Demande créée avec succès',
                 'revoked-successfully' => 'Demande révoquée avec succès',
+                'success-verify' => 'Succès ! L\'e-mail de vérification a été envoyé.',
+                'success-verify-email-unsent' => 'Succès ! L\'e-mail de vérification n\'a pas été envoyé.',
+                'unable-to-sent' => 'Impossible d\'envoyer l\'e-mail.',
 
                 'index' => [
                     'create-btn' => 'Créer une demande',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Adresse de livraison',
                 'state' => 'État',
                 'street-address' => 'Adresse de rue',
+                'street-address-line' => 'Adresse de rue, ligne :line',
                 'title' => 'Adresse',
                 'vat-id' => 'Numéro de TVA',
             ],

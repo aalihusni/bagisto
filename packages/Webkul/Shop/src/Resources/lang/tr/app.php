@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Varsayılan Olarak Ayarla',
                     'state' => 'Şehir / Bölge',
                     'street-address' => 'Adres Detayı',
+                    'street-address-line' => 'Adres Detayı, :line. Satır',
                     'title' => 'Adres',
                     'vat-id' => 'Vergi/KDV No',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Ülke Seçin',
                     'state' => 'Şehir / Bölge',
                     'street-address' => 'Adres Detayı',
+                    'street-address-line' => 'Adres Detayı, :line. Satır',
                     'title' => 'Adresi Düzenle',
                     'update-btn' => 'Güncelle',
                     'vat-id' => 'Vergi/KDV No',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Talep başarıyla oluşturuldu.',
                 'revoked-successfully' => 'Talep başarıyla iptal edildi.',
+                'success-verify' => 'Doğrulama e-postası gönderildi.',
+                'success-verify-email-unsent' => 'Doğrulama e-postası gönderilemedi.',
+                'unable-to-sent' => 'E-posta gönderilemiyor.',
 
                 'index' => [
                     'create-btn' => 'Talep Oluştur',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Teslimat Adresi',
                 'state' => 'Şehir',
                 'street-address' => 'Adres Detayı',
+                'street-address-line' => 'Adres Detayı, :line. Satır',
                 'title' => 'Adres Bilgileri',
                 'vat-id' => 'Vergi/KDV No',
             ],

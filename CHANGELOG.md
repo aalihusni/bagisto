@@ -4,7 +4,23 @@ This changelog consists of the bug & security fixes and new features being inclu
 
 ## Unreleased
 
+- Soon.
+
+## **v2.5.2 (18th of November 2026)** - *Release*
+
+- The admin customer address forms and Create Order now follow the street lines and allowed countries of the customer's channel, not the default channel's.
+
+- Fixed the extra street address lines looking detached and unlabelled, and being emptied when an address was edited at checkout or in admin Create Order.
+
 - Reworked admin notifications into a feed any package can add to, filtered by type and read per admin, covering orders, customers, reviews, returns, GDPR requests and imports.
+
+- Moved `core()->isCountryRequired()`, `isStateRequired()` and `isPostCodeRequired()` to `Webkul\Customer\Facades\AddressSettings`. The `core()` methods still work and are deprecated.
+
+- #11580 [feature] - Attribute groups can now be named in each locale from the attribute family screen, with existing names carried over. The group's admin name is kept in a new `attribute_groups.admin_name` column, and `name` stays.
+
+- #11500 [feature] - Customer > Address > Countries now limits the countries the storefront offers, per channel. The address forms, the country and state lists the storefront loads, and the address and shipping estimate validation all follow it, and leaving it empty keeps every country.
+
+- #11343 [feature] - Admin notifications now report system problems, such as a stopped queue worker or scheduler and unconfigured mail, and say when each is resolved. A System Health page under Configure → About lists every check.
 
 - #11575 [fixed] - An order for a product that does not manage its stock could not be shipped, so it never completed. It now ships whatever the inventory source holds.
 

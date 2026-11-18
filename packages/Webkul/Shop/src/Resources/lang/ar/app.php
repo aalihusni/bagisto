@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'تعيين كافتراضي',
                     'state' => 'المنطقة',
                     'street-address' => 'عنوان الشارع',
+                    'street-address-line' => 'عنوان الشارع، السطر :line',
                     'title' => 'العنوان',
                     'vat-id' => 'رقم الضريبة',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'اختر البلد',
                     'state' => 'المنطقة',
                     'street-address' => 'عنوان الشارع',
+                    'street-address-line' => 'عنوان الشارع، السطر :line',
                     'title' => 'العنوان',
                     'update-btn' => 'تحديث',
                     'vat-id' => 'رقم الضريبة',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'تم إنشاء الطلب بنجاح',
                 'revoked-successfully' => 'تم إلغاء الطلب بنجاح',
+                'success-verify' => 'نجاح! تم إرسال بريد التحقق الإلكتروني.',
+                'success-verify-email-unsent' => 'نجاح! لم يتم إرسال بريد التحقق الإلكتروني.',
+                'unable-to-sent' => 'تعذر إرسال البريد الإلكتروني.',
 
                 'index' => [
                     'create-btn' => 'إنشاء طلب',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'عنوان الشحن',
                 'state' => 'الولاية',
                 'street-address' => 'عنوان الشارع',
+                'street-address-line' => 'عنوان الشارع، السطر :line',
                 'title' => 'العنوان',
                 'vat-id' => 'رقم الضريبة',
             ],

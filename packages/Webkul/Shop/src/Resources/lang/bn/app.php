@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'ডিফল্ট হিসাবে সেট করুন',
                     'state' => 'রাষ্ট্র',
                     'street-address' => 'রাস্তার ঠিকানা',
+                    'street-address-line' => 'রাস্তার ঠিকানা, লাইন :line',
                     'title' => 'ঠিকানা',
                     'vat-id' => 'ভ্যাট আইডি',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'দেশ নির্বাচন করুন',
                     'state' => 'রাষ্ট্র',
                     'street-address' => 'রাস্তার ঠিকানা',
+                    'street-address-line' => 'রাস্তার ঠিকানা, লাইন :line',
                     'title' => 'ঠিকানা',
                     'update-btn' => 'আপডেট করুন',
                     'vat-id' => 'ভ্যাট আইডি',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'অনুরোধ সফলভাবে তৈরি হয়েছে',
                 'revoked-successfully' => 'অনুরোধ সফলভাবে বাতিল হয়েছে',
+                'success-verify' => 'সফলতা! যাচাইকরণ ইমেল পাঠানো হয়েছে।',
+                'success-verify-email-unsent' => 'সফলতা! যাচাইকরণ ইমেল পাঠানো হয়নি।',
+                'unable-to-sent' => 'ইমেল পাঠাতে অক্ষম।',
 
                 'index' => [
                     'create-btn' => 'অনুরোধ তৈরি করুন',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'শিপিং ঠিকানা',
                 'state' => 'রাষ্ট্র',
                 'street-address' => 'রাস্তার ঠিকানা',
+                'street-address-line' => 'রাস্তার ঠিকানা, লাইন :line',
                 'title' => 'ঠিকানা',
                 'vat-id' => 'ভ্যাট আইডি',
             ],

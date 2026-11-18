@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'קבע כברירת מחדל',
                     'state' => 'מדינה',
                     'street-address' => 'כתובת',
+                    'street-address-line' => 'כתובת, שורה :line',
                     'title' => 'כתובת',
                     'vat-id' => 'מספר עוסק מורשה',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'בחר מדינה',
                     'state' => 'מדינה',
                     'street-address' => 'כתובת',
+                    'street-address-line' => 'כתובת, שורה :line',
                     'title' => 'כתובת',
                     'update-btn' => 'עדכון',
                     'vat-id' => 'מספר עוסק מורשה',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'הבקשה נוצרה בהצלחה',
                 'revoked-successfully' => 'הבקשה בוטלה בהצלחה',
+                'success-verify' => 'הצלחה! אימייל האימות נשלח.',
+                'success-verify-email-unsent' => 'הצלחה! אימייל האימות לא נשלח.',
+                'unable-to-sent' => 'לא ניתן לשלוח אימייל.',
 
                 'index' => [
                     'create-btn' => 'צור בקשה',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'כתובת למשלוח',
                 'state' => 'מדינה',
                 'street-address' => 'כתובת',
+                'street-address-line' => 'כתובת, שורה :line',
                 'title' => 'כתובת',
                 'vat-id' => 'מספר עוסק מורשה',
             ],

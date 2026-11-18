@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Setează ca implicită',
                     'state' => 'Județ',
                     'street-address' => 'Adresa străzii',
+                    'street-address-line' => 'Adresa străzii, rândul :line',
                     'title' => 'Adresă',
                     'vat-id' => 'Cod TVA',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Selectează țara',
                     'state' => 'Județ',
                     'street-address' => 'Adresa străzii',
+                    'street-address-line' => 'Adresa străzii, rândul :line',
                     'title' => 'Adresă',
                     'update-btn' => 'Actualizează',
                     'vat-id' => 'Cod TVA',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Cerere creată cu succes',
                 'revoked-successfully' => 'Cerere revocată cu succes',
+                'success-verify' => 'Succes! E-mailul de verificare a fost trimis.',
+                'success-verify-email-unsent' => 'Succes! E-mailul de verificare nu a fost trimis.',
+                'unable-to-sent' => 'Nu s-a putut trimite e-mailul.',
 
                 'index' => [
                     'create-btn' => 'Creează cerere',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Adresa de livrare',
                 'state' => 'Județ',
                 'street-address' => 'Adresa străzii',
+                'street-address-line' => 'Adresa străzii, rândul :line',
                 'title' => 'Adresă',
                 'vat-id' => 'Cod TVA',
             ],

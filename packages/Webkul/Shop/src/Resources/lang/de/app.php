@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Als Standard festlegen',
                     'state' => 'Bundesland',
                     'street-address' => 'Straße und Hausnummer',
+                    'street-address-line' => 'Straße und Hausnummer, Zeile :line',
                     'title' => 'Adresse',
                     'vat-id' => 'USt-IdNr.',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Land auswählen',
                     'state' => 'Bundesland',
                     'street-address' => 'Straße und Hausnummer',
+                    'street-address-line' => 'Straße und Hausnummer, Zeile :line',
                     'title' => 'Adresse',
                     'update-btn' => 'Aktualisieren',
                     'vat-id' => 'USt-IdNr.',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Anfrage erfolgreich erstellt',
                 'revoked-successfully' => 'Anfrage erfolgreich widerrufen',
+                'success-verify' => 'Erfolg! Bestätigungs-E-Mail wurde gesendet.',
+                'success-verify-email-unsent' => 'Erfolg! Bestätigungs-E-Mail wurde nicht gesendet.',
+                'unable-to-sent' => 'E-Mail konnte nicht gesendet werden.',
 
                 'index' => [
                     'create-btn' => 'Anfrage erstellen',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Versandadresse',
                 'state' => 'Bundesland',
                 'street-address' => 'Straßenadresse',
+                'street-address-line' => 'Straßenadresse, Zeile :line',
                 'title' => 'Adresse',
                 'vat-id' => 'USt-IdNr.',
             ],

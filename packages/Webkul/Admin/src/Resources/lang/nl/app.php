@@ -48,14 +48,18 @@ return [
     'notifications' => [
         'all' => 'Alles',
         'description' => 'Houd bestellingen, klanten en alles wat uw aandacht nodig heeft in de gaten.',
+        'description-text' => 'Alle meldingen weergeven',
         'empty-description' => 'Nieuwe meldingen verschijnen hier zodra ze binnenkomen.',
         'empty-title' => 'U bent helemaal bij',
         'mark-all-read' => 'Alles als gelezen markeren',
         'mark-read' => 'Als gelezen markeren',
         'mark-unread' => 'Als ongelezen markeren',
         'marked-all-read' => 'Alle meldingen zijn als gelezen gemarkeerd.',
+        'marked-success' => 'Alle meldingen zijn gemarkeerd als gelezen',
+        'no-record' => 'Geen Records Gevonden',
         'of' => 'van',
         'per-page' => 'Per pagina',
+        'read-all' => 'Markeer als Gelezen',
         'title' => 'Meldingen',
         'today' => 'Vandaag',
         'unread' => 'Ongelezen',
@@ -69,12 +73,48 @@ return [
             'orders' => 'Bestellingen',
             'returns' => 'RMA-verzoeken',
             'reviews' => 'Beoordelingen',
+            'system' => 'Systeem',
+        ],
+
+        'order-status-messages' => [
+            'all' => 'Alles',
+            'canceled' => 'Bestelling Geannuleerd',
+            'closed' => 'Bestelling Gesloten',
+            'completed' => 'Bestelling Voltooid',
+            'pending' => 'Bestelling In Afwachting',
+            'pending-payment' => 'In Afwachting van Betaling',
+            'processing' => 'Bestelling In Verwerking',
         ],
 
         'types' => [
+            'app-url-mismatch' => [
+                'message' => 'APP_URL is :url, maar de winkel wordt geserveerd vanaf :host. Links in e-mails zullen onjuist zijn.',
+                'title' => 'APP_URL komt niet overeen met het winkeladres',
+            ],
+
+            'broadcast-unreachable' => [
+                'message' => 'De broadcastserver reageerde niet, dus meldingen worden niet live bijgewerkt.',
+                'title' => 'Realtime meldingen zijn niet bereikbaar',
+            ],
+
             'customer-registered' => [
                 'message' => ':name · :email',
                 'title' => 'Nieuwe klant geregistreerd',
+            ],
+
+            'debug-mode-enabled' => [
+                'message' => 'Foutpagina\'s tonen interne details aan bezoekers. Stel APP_DEBUG=false in.',
+                'title' => 'Debugmodus staat aan in productie',
+            ],
+
+            'exchange-rates-stale' => [
+                'message' => 'De koersen zijn niet volgens schema bijgewerkt. Controleer de wisselkoersdienst en de API-sleutel.',
+                'title' => 'Wisselkoersen zijn verouderd',
+            ],
+
+            'failed-jobs' => [
+                'message' => ':count mislukte jobs wachten. Bekijk ze met php artisan queue:failed.',
+                'title' => 'Jobs in de wachtrij mislukken',
             ],
 
             'gdpr-requested' => [
@@ -87,6 +127,16 @@ return [
                 'message' => ':processed rijen verwerkt',
                 'message-skipped' => ':processed rijen verwerkt, :skipped overgeslagen',
                 'title' => 'Import van :type voltooid',
+            ],
+
+            'index-incomplete' => [
+                'message' => 'Sommige producten hebben geen prijsindex. Voer php artisan indexer:index uit.',
+                'title' => 'Productindex is onvolledig',
+            ],
+
+            'mail-not-configured' => [
+                'message' => 'De winkel kan geen e-mail verzenden totdat SMTP of Brevo is ingesteld.',
+                'title' => 'E-mail is niet geconfigureerd',
             ],
 
             'order' => [
@@ -106,6 +156,11 @@ return [
                 'title' => 'Terugbetaling uitgevoerd voor bestelling #:order',
             ],
 
+            'queue-worker-stopped' => [
+                'message' => 'Jobs in de wachtrij :connection wachten. Start hem met php artisan queue:work.',
+                'title' => 'Queue worker draait niet',
+            ],
+
             'return-requested' => [
                 'message' => 'Bestelling #:order van :customer',
                 'title' => 'Nieuw retourverzoek #:id',
@@ -114,6 +169,25 @@ return [
             'review-created' => [
                 'message' => ':customer gaf :product :rating van de 5',
                 'title' => 'Nieuwe review wacht op goedkeuring',
+            ],
+
+            'scheduler-stopped' => [
+                'message' => 'Geplande taken worden niet uitgevoerd. Voeg de cron-regel voor schedule:run toe aan uw server.',
+                'title' => 'Scheduler draait niet',
+            ],
+
+            'search-unreachable' => [
+                'message' => 'De zoekmachine reageerde niet. Controleer de verbindingsinstellingen.',
+                'title' => 'Zoekmachine is niet bereikbaar',
+            ],
+
+            'storage-unreachable' => [
+                'message' => 'Uploads bereiken de gekozen opslag niet. Controleer de inloggegevens.',
+                'title' => 'Externe opslag is niet beschikbaar',
+            ],
+
+            'system' => [
+                'resolved-title' => 'Opgelost: :title',
             ],
         ],
     ],
@@ -390,10 +464,12 @@ return [
                         'search' => [
                             'add-to-cart' => 'Toevoegen aan winkelwagen',
                             'available-qty' => ':qty beschikbaar',
+                            'empty-channel-info' => 'Geen producten beschikbaar op kanaal :channel voor zoekterm.',
                             'empty-info' => 'Geen producten beschikbaar voor zoekterm.',
                             'empty-title' => 'Geen producten gevonden',
                             'product-image' => 'Productafbeelding',
                             'qty' => 'Aantal',
+                            'search-info' => 'Zoek naar producten die beschikbaar zijn op kanaal :channel.',
                             'sku' => 'SKU - :sku',
                             'title' => 'Producten zoeken',
                         ],
@@ -428,6 +504,7 @@ return [
                         'shipping-address' => 'Verzendadres',
                         'state' => 'Provincie',
                         'street-address' => 'Straatnaam en huisnummer',
+                        'street-address-line' => 'Straatnaam en huisnummer, regel :line',
                         'title' => 'Adres',
                         'vat-id' => 'BTW-nummer',
                     ],
@@ -2114,12 +2191,17 @@ return [
                 'code' => 'Code',
                 'column' => 'Kolom',
                 'delete-group-btn' => 'Groep Verwijderen',
+                'drop-attributes-here' => 'Sleep attributen hierheen',
+                'edit-group-btn' => 'Groep bewerken',
                 'edit-group-info' => 'Dubbelklik om Groep te bewerken',
+                'edit-group-title' => 'Groep bewerken',
                 'enter-code' => 'Voer Code In',
                 'enter-name' => 'Voer Naam In',
                 'general' => 'Algemeen',
                 'group-code-already-exists' => 'Een attribuutgroepcode bestaat al.',
                 'group-contains-system-attributes' => 'Deze groep bevat systeemattributen. Verplaats eerst systeemattributen naar een andere groep en probeer opnieuw.',
+                'group-labels' => 'Naam in elke taal',
+                'group-labels-info' => 'Laat een taal leeg om de bovenstaande naam te gebruiken.',
                 'group-name-already-exists' => 'Er bestaat al een attribuutgroepnaam.',
                 'groups' => 'Groepen',
                 'groups-info' => 'Beheer attribuutfamiliegroepen',
@@ -2128,6 +2210,7 @@ return [
                 'removal-not-possible' => 'U kunt systeemattributen niet uit de attribuutfamilie verwijderen.',
                 'right-column' => 'Rechterzijkolom',
                 'save-btn' => 'Attribuutfamilie Opslaan',
+                'save-group-btn' => 'Groep opslaan',
                 'select-group' => 'Selecteer een attribuutgroep, alstublieft.',
                 'title' => 'Attribuutfamilie Aanmaken',
                 'unassigned-attributes' => 'Niet-toegewezen Attributen',
@@ -2141,12 +2224,17 @@ return [
                 'code' => 'Code',
                 'column' => 'Kolom',
                 'delete-group-btn' => 'Groep Verwijderen',
+                'drop-attributes-here' => 'Sleep attributen hierheen',
+                'edit-group-btn' => 'Groep bewerken',
                 'edit-group-info' => 'Dubbelklik om Groep te bewerken',
+                'edit-group-title' => 'Groep bewerken',
                 'enter-code' => 'Voer Code In',
                 'enter-name' => 'Voer Naam In',
                 'general' => 'Algemeen',
                 'group-code-already-exists' => 'Een attribuutgroepcode bestaat al.',
                 'group-contains-system-attributes' => 'Deze groep bevat systeemattributen. Verplaats eerst systeemattributen naar een andere groep en probeer opnieuw.',
+                'group-labels' => 'Naam in elke taal',
+                'group-labels-info' => 'Laat een taal leeg om de bovenstaande naam te gebruiken.',
                 'group-name-already-exists' => 'Er bestaat al een attribuutgroepnaam.',
                 'groups' => 'Groepen',
                 'groups-info' => 'Beheer attribuutfamiliegroepen',
@@ -2155,6 +2243,7 @@ return [
                 'removal-not-possible' => 'U kunt systeemattributen niet uit de attribuutfamilie verwijderen.',
                 'right-column' => 'Rechterzijkolom',
                 'save-btn' => 'Attribuutfamilie Opslaan',
+                'save-group-btn' => 'Groep opslaan',
                 'select-group' => 'Selecteer een attribuutgroep, alstublieft.',
                 'title' => 'Attribuutfamilie Bewerken',
                 'unassigned-attributes' => 'Niet-toegewezen Attributen',
@@ -2274,6 +2363,7 @@ return [
                         'select-country' => 'Selecteer Land',
                         'state' => 'Provincie',
                         'street-address' => 'Straatadres',
+                        'street-address-line' => 'Straatadres, regel :line',
                         'title' => 'Adres Aanmaken',
                         'vat-id' => 'BTW-nummer',
                     ],
@@ -2293,6 +2383,7 @@ return [
                         'select-country' => 'Selecteer Land',
                         'state' => 'Provincie',
                         'street-address' => 'Straatadres',
+                        'street-address-line' => 'Straatadres, regel :line',
                         'title' => 'Adres Bewerken',
                         'vat-id' => 'BTW-nummer',
                     ],
@@ -4544,6 +4635,78 @@ return [
                         'yes' => 'Ja',
                     ],
                 ],
+
+                'system-health' => [
+                    'info' => 'Wat de winkel nodig heeft om te draaien en wat uw aandacht vraagt.',
+                    'open-settings' => 'Instellingen openen',
+                    'summary-attention' => ':count van :total controles vragen aandacht.',
+                    'summary-healthy' => 'Alles wat de winkel nodig heeft werkt.',
+                    'title' => 'Systeemstatus',
+
+                    'checks' => [
+                        'application-url' => [
+                            'info' => 'APP_URL moet overeenkomen met het adres waarop de winkel wordt geserveerd.',
+                            'title' => 'Winkeladres',
+                        ],
+
+                        'broadcasting' => [
+                            'info' => 'Stuurt nieuwe meldingen naar het beheerpaneel zonder te herladen.',
+                            'title' => 'Realtime meldingen',
+                        ],
+
+                        'debug-mode' => [
+                            'info' => 'Moet uit staan in productie, zodat foutpagina\'s niets prijsgeven.',
+                            'title' => 'Debugmodus',
+                        ],
+
+                        'exchange-rates' => [
+                            'info' => 'Houdt de koersen actueel in een winkel met meerdere valuta\'s.',
+                            'title' => 'Wisselkoersen',
+                        ],
+
+                        'failed-jobs' => [
+                            'info' => 'Achtergrondjobs die met een fout zijn gestopt en op een nieuwe poging wachten.',
+                            'title' => 'Mislukte jobs',
+                        ],
+
+                        'mail' => [
+                            'info' => 'Verstuurt bestel-, account- en beheer-e-mails.',
+                            'title' => 'E-mail',
+                        ],
+
+                        'product-index' => [
+                            'info' => 'Bevat de prijzen waarmee de winkel producten toont.',
+                            'title' => 'Productindex',
+                        ],
+
+                        'queue-worker' => [
+                            'info' => 'Verwerkt e-mails, imports en indexering op de achtergrond.',
+                            'title' => 'Queue worker',
+                        ],
+
+                        'remote-storage' => [
+                            'info' => 'Slaat productafbeeldingen en andere uploads op.',
+                            'title' => 'Bestandsopslag',
+                        ],
+
+                        'scheduler' => [
+                            'info' => 'Voert geplande taken uit, zoals prijsregels, wisselkoersen en factuurherinneringen.',
+                            'title' => 'Scheduler',
+                        ],
+
+                        'search-engine' => [
+                            'info' => 'Beantwoordt zoekopdrachten in de winkel en categorielijsten.',
+                            'title' => 'Zoekmachine',
+                        ],
+                    ],
+
+                    'states' => [
+                        'failing' => 'Vraagt aandacht',
+                        'healthy' => 'Werkt',
+                        'idle' => 'Niet in gebruik',
+                        'unconfirmed' => 'Nog niet bevestigd',
+                    ],
+                ],
             ],
 
             'add-file' => 'Bestand Toevoegen',
@@ -4559,6 +4722,7 @@ return [
             'save-message' => 'Configuratie succesvol opgeslagen',
             'search' => 'Zoeken',
             'select-country' => 'Selecteer land',
+            'select-options' => 'Selecteer opties',
             'select-state' => 'Selecteer provincie',
             'title' => 'Configuratie',
 
@@ -5393,6 +5557,13 @@ return [
                         'title' => 'Informatie',
                         'title-info' => 'Hoeveel adresregels het adresformulier toont.',
                     ],
+
+                    'countries' => [
+                        'allowed' => 'Toegestane landen',
+                        'allowed-info' => 'Laat leeg om alle landen aan te bieden.',
+                        'title' => 'Landen',
+                        'title-info' => 'Welke landen klanten in de winkel kunnen kiezen.',
+                    ],
                 ],
 
                 'captcha' => [
@@ -5889,6 +6060,7 @@ return [
                 'logout' => 'Uitloggen',
                 'my-account' => 'Mijn Account',
                 'notifications' => 'Meldingen',
+                'system-health' => 'Systeemstatus',
                 'visit-shop' => 'Bezoek Winkel',
 
                 'mega-search' => [

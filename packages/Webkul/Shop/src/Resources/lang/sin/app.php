@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'පෙරනිමි ලිපිනයක් ලැබෙන්න',
                     'state' => 'පළාත',
                     'street-address' => 'වීදි ලිපිනය',
+                    'street-address-line' => 'වීදි ලිපිනය, රේඛාව :line',
                     'title' => 'ලිපිනය',
                     'vat-id' => 'වැට් අංකය',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'රටක් තෝරන්න',
                     'state' => 'පළාත',
                     'street-address' => 'වීදි ලිපිනය',
+                    'street-address-line' => 'වීදි ලිපිනය, රේඛාව :line',
                     'title' => 'ලිපිනය',
                     'update-btn' => 'යාවත්කාල කරන්න',
                     'vat-id' => 'වැට් අංකය',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'ඉල්ලීම සාර්ථකව නිර්මාණය කරන ලදී',
                 'revoked-successfully' => 'ඉල්ලීම සාර්ථකව අවලංගු කරන ලදී',
+                'success-verify' => 'සාර්ථකයි! තහවුරු කිරීමේ විද්‍යුත් තැපෑල යවා ඇත.',
+                'success-verify-email-unsent' => 'සාර්ථකයි! තහවුරු කිරීමේ විද්‍යුත් තැපෑල යවා නොමැත.',
+                'unable-to-sent' => 'විද්‍යුත් තැපෑල යැවිය නොහැක.',
 
                 'index' => [
                     'create-btn' => 'ඉල්ලීමක් සාදන්න',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'සහිත ලිපිනය',
                 'state' => 'රාජ්‍යය',
                 'street-address' => 'වීදි ලිපිනය',
+                'street-address-line' => 'වීදි ලිපිනය, රේඛාව :line',
                 'title' => 'ලිපිනය',
                 'vat-id' => 'වැට් අංකය',
             ],

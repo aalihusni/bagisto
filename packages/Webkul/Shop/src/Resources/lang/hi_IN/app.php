@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'डिफ़ॉल्ट के रूप में सेट करें',
                     'state' => 'राज्य',
                     'street-address' => 'सड़क का पता',
+                    'street-address-line' => 'सड़क का पता, पंक्ति :line',
                     'title' => 'पता',
                     'vat-id' => 'वैट आईडी',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'देश चुनें',
                     'state' => 'राज्य',
                     'street-address' => 'सड़क का पता',
+                    'street-address-line' => 'सड़क का पता, पंक्ति :line',
                     'title' => 'पता',
                     'update-btn' => 'अपडेट करें',
                     'vat-id' => 'वैट आईडी',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'अनुरोध सफलतापूर्वक बनाया गया',
                 'revoked-successfully' => 'अनुरोध सफलतापूर्वक रद्द किया गया',
+                'success-verify' => 'Successo! L\'email di verifica è stata inviata.',
+                'success-verify-email-unsent' => 'Successo! L\'email di verifica non è stata inviata.',
+                'unable-to-sent' => 'Impossibile inviare l\'email.',
 
                 'index' => [
                     'create-btn' => 'Crea richiesta',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'शिपिंग पता',
                 'state' => 'राज्य',
                 'street-address' => 'स्ट्रीट पता',
+                'street-address-line' => 'स्ट्रीट पता, पंक्ति :line',
                 'title' => 'पता',
                 'vat-id' => 'वैट आईडी',
             ],

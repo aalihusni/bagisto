@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Instellen als Standaard',
                     'state' => 'Provincie',
                     'street-address' => 'Straatnaam en Huisnummer',
+                    'street-address-line' => 'Straatnaam en Huisnummer, regel :line',
                     'title' => 'Adres',
                     'vat-id' => 'BTW-nummer',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Selecteer Land',
                     'state' => 'Provincie',
                     'street-address' => 'Straatnaam en Huisnummer',
+                    'street-address-line' => 'Straatnaam en Huisnummer, regel :line',
                     'title' => 'Adres',
                     'update-btn' => 'Bijwerken',
                     'vat-id' => 'BTW-nummer',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Verzoek succesvol aangemaakt',
                 'revoked-successfully' => 'Verzoek succesvol ingetrokken',
+                'success-verify' => 'Succes! Verificatie-e-mail is verzonden.',
+                'success-verify-email-unsent' => 'Succes! Verificatie-e-mail is niet verzonden.',
+                'unable-to-sent' => 'E-mail kon niet worden verzonden.',
 
                 'index' => [
                     'create-btn' => 'Verzoek aanmaken',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Verzendadres',
                 'state' => 'Provincie',
                 'street-address' => 'Straatadres',
+                'street-address-line' => 'Straatadres, regel :line',
                 'title' => 'Adres',
                 'vat-id' => 'BTW-nummer',
             ],

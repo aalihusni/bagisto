@@ -10,24 +10,31 @@ use Webkul\Admin\Http\Requests\NotificationFeedRequest;
 use Webkul\Admin\Http\Resources\NotificationResource;
 use Webkul\Admin\Notifications\AdminNotifications;
 use Webkul\Notification\Contracts\Notification;
+use Webkul\Notification\Models\Notification as NotificationModel;
 use Webkul\Notification\Repositories\NotificationRepository;
 use Webkul\Notification\TypeRegistry;
 
 class NotificationController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Create a new controller instance. The last two are optional so a subclass passing only the repository still works.
      */
     public function __construct(
         protected NotificationRepository $notificationRepository,
-        protected TypeRegistry $typeRegistry,
-        protected AdminNotifications $adminNotifications
-    ) {}
+        protected ?TypeRegistry $typeRegistry = null,
+        protected ?AdminNotifications $adminNotifications = null
+    ) {
+        $this->typeRegistry ??= app(TypeRegistry::class);
+
+        $this->adminNotifications ??= app(AdminNotifications::class);
+    }
 
     /**
      * Display the notification feed.
+     *
+     * @return View
      */
-    public function index(): View
+    public function index()
     {
         return view('admin::notifications.index');
     }
@@ -61,17 +68,19 @@ class NotificationController extends Controller
     }
 
     /**
-     * Mark the notification read and take the admin to what it is about.
+     * Mark the notification read and take the admin to what it is about. One that leads nowhere cannot be opened.
      */
     public function open(int $id): RedirectResponse
     {
         $notification = $this->visibleNotification($id);
 
-        $this->notificationRepository->markRead($notification->id, $this->admin());
-
         $url = $this->typeRegistry->instance($notification->type)->url($notification->data ?? []);
 
-        return redirect()->to($url ?? route('admin.notification.index'));
+        abort_if(is_null($url), 404);
+
+        $this->notificationRepository->markRead($notification->id, $this->admin());
+
+        return redirect()->to($url);
     }
 
     /**
@@ -102,6 +111,77 @@ class NotificationController extends Controller
         $this->notificationRepository->markAllRead($this->admin(), AdminNotifications::AUDIENCE, $request->types());
 
         return $this->unreadResponse(trans('admin::app.notifications.marked-all-read'));
+    }
+
+    /**
+     * The placed order notifications, in the shape the bell read before notifications were typed.
+     *
+     * @deprecated Use list().
+     *
+     * @return array
+     */
+    public function getNotifications()
+    {
+        if (! $this->readsOrderNotifications()) {
+            return [
+                'search_results' => [],
+                'status_count' => '',
+                'total_unread' => 0,
+            ];
+        }
+
+        $params = request()->except('page');
+
+        $searchResults = count($params)
+            ? $this->notificationRepository->getParamsData($params)
+            : $this->notificationRepository->getAll();
+
+        return [
+            'search_results' => $searchResults['notifications'],
+            'status_count' => $searchResults['status_counts'],
+            'total_unread' => $this->notificationRepository->countUnreadOrderNotifications(),
+        ];
+    }
+
+    /**
+     * Mark an order's notification read and take the admin to the order.
+     *
+     * @deprecated Use open().
+     *
+     * @param  int  $orderId
+     * @return RedirectResponse
+     */
+    public function viewedNotifications($orderId)
+    {
+        abort_unless($this->readsOrderNotifications(), 401);
+
+        $notification = $this->notificationRepository->findByOrder((int) $orderId);
+
+        abort_unless($notification, 404);
+
+        $this->notificationRepository->markRead($notification->id, $this->admin());
+
+        return redirect()->route('admin.sales.orders.view', $orderId);
+    }
+
+    /**
+     * Mark every placed order notification read for the admin.
+     *
+     * @deprecated Use readAll().
+     *
+     * @return array
+     */
+    public function readAllNotifications()
+    {
+        abort_unless($this->readsOrderNotifications(), 401);
+
+        $this->notificationRepository->markAllRead($this->admin(), AdminNotifications::AUDIENCE, [NotificationModel::ORDER_PLACED]);
+
+        return [
+            'search_results' => $this->notificationRepository->getParamsData(['limit' => 5, 'read' => 0]),
+            'total_unread' => $this->notificationRepository->countUnreadOrderNotifications(),
+            'success_message' => trans('admin::app.notifications.marked-success'),
+        ];
     }
 
     /**
@@ -159,6 +239,16 @@ class NotificationController extends Controller
             ])
             ->values()
             ->all();
+    }
+
+    /**
+     * Whether the signed in admin may read the orders the deprecated endpoints list.
+     *
+     * @deprecated The feed is narrowed by each type's permission.
+     */
+    protected function readsOrderNotifications(): bool
+    {
+        return bouncer()->hasPermission('sales.orders');
     }
 
     /**

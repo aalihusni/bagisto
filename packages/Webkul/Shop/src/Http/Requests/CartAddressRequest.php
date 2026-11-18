@@ -8,12 +8,14 @@ use Webkul\Core\Rules\AddressLines;
 use Webkul\Core\Rules\PhoneNumber;
 use Webkul\Core\Rules\PostCode;
 use Webkul\Core\Rules\StateBelongsToCountry;
+use Webkul\Customer\Facades\AddressSettings;
+use Webkul\Customer\Rules\AllowedCountry;
 use Webkul\Customer\Rules\VatIdRule;
 
 class CartAddressRequest extends FormRequest
 {
     /**
-     * Rules.
+     * The validation rules gathered for the addresses the request carries.
      *
      * @var array
      */
@@ -58,13 +60,13 @@ class CartAddressRequest extends FormRequest
             "{$addressType}.email" => ['required', 'max:255'],
             "{$addressType}.address" => ['required', 'array', 'min:1', new AddressLines],
             "{$addressType}.city" => ['required', 'max:255'],
-            "{$addressType}.country" => core()->isCountryRequired() ? ['required'] : ['nullable'],
+            "{$addressType}.country" => [AddressSettings::isCountryRequired() ? 'required' : 'nullable', new AllowedCountry],
             "{$addressType}.state" => [
-                core()->isStateRequired() ? 'required' : 'nullable',
+                AddressSettings::isStateRequired() ? 'required' : 'nullable',
                 'max:255',
                 new StateBelongsToCountry($this->input("{$addressType}.country")),
             ],
-            "{$addressType}.postcode" => core()->isPostCodeRequired() ? ['required', 'max:255', new PostCode] : ['max:255', new PostCode],
+            "{$addressType}.postcode" => AddressSettings::isPostCodeRequired() ? ['required', 'max:255', new PostCode] : ['max:255', new PostCode],
             "{$addressType}.phone" => ['required', 'max:255', new PhoneNumber],
         ]);
 

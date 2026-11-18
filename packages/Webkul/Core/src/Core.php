@@ -16,6 +16,7 @@ use Webkul\Core\Repositories\CountryStateRepository;
 use Webkul\Core\Repositories\CurrencyRepository;
 use Webkul\Core\Repositories\ExchangeRateRepository;
 use Webkul\Core\Repositories\LocaleRepository;
+use Webkul\Customer\AddressSettings;
 use Webkul\Customer\Contracts\CustomerGroup;
 use Webkul\Customer\Repositories\CustomerGroupRepository;
 use Webkul\Tax\Repositories\TaxCategoryRepository;
@@ -767,31 +768,37 @@ class Core
     /**
      * Is country required.
      *
+     * @deprecated Use Webkul\Customer\Facades\AddressSettings::isCountryRequired() instead.
+     *
      * @return bool
      */
     public function isCountryRequired()
     {
-        return (bool) $this->getConfigData('customer.address.requirements.country');
+        return app(AddressSettings::class)->isCountryRequired();
     }
 
     /**
      * Is state required.
      *
+     * @deprecated Use Webkul\Customer\Facades\AddressSettings::isStateRequired() instead.
+     *
      * @return bool
      */
     public function isStateRequired()
     {
-        return (bool) $this->getConfigData('customer.address.requirements.state');
+        return app(AddressSettings::class)->isStateRequired();
     }
 
     /**
      * Is postcode required.
      *
+     * @deprecated Use Webkul\Customer\Facades\AddressSettings::isPostCodeRequired() instead.
+     *
      * @return bool
      */
     public function isPostCodeRequired()
     {
-        return (bool) $this->getConfigData('customer.address.requirements.postcode');
+        return app(AddressSettings::class)->isPostCodeRequired();
     }
 
     /**

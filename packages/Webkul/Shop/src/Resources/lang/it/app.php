@@ -147,6 +147,7 @@ return [
                     'set-as-default' => 'Imposta come Predefinito',
                     'state' => 'Stato',
                     'street-address' => 'Indirizzo',
+                    'street-address-line' => 'Indirizzo, riga :line',
                     'title' => 'Indirizzo',
                     'vat-id' => 'Partita IVA',
                 ],
@@ -164,6 +165,7 @@ return [
                     'select-country' => 'Seleziona Paese',
                     'state' => 'Stato',
                     'street-address' => 'Indirizzo',
+                    'street-address-line' => 'Indirizzo, riga :line',
                     'title' => 'Indirizzo',
                     'update-btn' => 'Aggiorna',
                     'vat-id' => 'Partita IVA',
@@ -398,6 +400,9 @@ return [
             'gdpr' => [
                 'create-success' => 'Richiesta creata con successo',
                 'revoked-successfully' => 'Richiesta revocata con successo',
+                'success-verify' => 'Successo! L\'email di verifica è stata inviata.',
+                'success-verify-email-unsent' => 'Successo! L\'email di verifica non è stata inviata.',
+                'unable-to-sent' => 'Impossibile inviare l\'email.',
 
                 'index' => [
                     'create-btn' => 'Crea richiesta',
@@ -1211,6 +1216,7 @@ return [
                 'shipping-address' => 'Indirizzo di spedizione',
                 'state' => 'Regione',
                 'street-address' => 'Indirizzo',
+                'street-address-line' => 'Indirizzo, riga :line',
                 'title' => 'Indirizzo',
                 'vat-id' => 'Partita IVA',
             ],
